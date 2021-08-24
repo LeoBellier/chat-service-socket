@@ -1,10 +1,17 @@
 package com.bellier.chatservice.dto;
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
 public class Message {
-    private String messageContent;
+	public Message(String messageContent) {
+		this.messageContent = messageContent;
+	}
+
+	private final String messageContent;
+
+	public String getMessageContent() {
+		return messageContent;
+	}
+
 }

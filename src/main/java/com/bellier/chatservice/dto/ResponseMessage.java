@@ -1,12 +1,14 @@
 package com.bellier.chatservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@AllArgsConstructor
 public class ResponseMessage {
-    private String contentMessage;
+	private final String contentMessage;
+
+	public ResponseMessage(String contentMessage) {
+		this.contentMessage = contentMessage;
+	}
+
+	public String getContentMessage() {
+		return contentMessage;
+	}
 }

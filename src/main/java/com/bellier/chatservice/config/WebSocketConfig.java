@@ -1,5 +1,6 @@
 package com.bellier.chatservice.config;
 
+import com.bellier.chatservice.handler.UserHandleShaker;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -11,8 +12,10 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(final StompEndpointRegistry registry) {
-        registry.addEndpoint("/our-websocket").withSockJS();
-    }
+		registry.addEndpoint("/our-websocket")
+				.setHandshakeHandler(new UserHandleShaker())
+				.withSockJS();
+	}
 
     @Override
     public void configureMessageBroker(final MessageBrokerRegistry registry) {
