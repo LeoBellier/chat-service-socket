@@ -12,8 +12,8 @@ import java.security.Principal;
 import java.util.Map;
 import java.util.UUID;
 
-public class UserHandleShaker extends DefaultHandshakeHandler {
-	private final Logger LOG = LoggerFactory.getLogger(UserHandleShaker.class);
+public class UserHandshakeHandler extends DefaultHandshakeHandler {
+	private final Logger LOG = LoggerFactory.getLogger(UserHandshakeHandler.class);
 
 	@Override
 	protected Principal determineUser(ServerHttpRequest request, WebSocketHandler wsHandler, Map<String, Object> attributes) {

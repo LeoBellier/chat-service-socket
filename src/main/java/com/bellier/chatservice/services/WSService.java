@@ -22,7 +22,7 @@ public class WSService {
 	public void notifyUser(String id, String messageContent) {
 		ResponseMessage response = new ResponseMessage(messageContent);
 
-		messagingTemplate.convertAndSendToUser(id, "/topic/messages", response);
+		messagingTemplate.convertAndSendToUser(id, "/topic/private-messages", response);
 
 	}
 }

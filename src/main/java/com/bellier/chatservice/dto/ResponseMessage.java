@@ -2,13 +2,20 @@ package com.bellier.chatservice.dto;
 
 
 public class ResponseMessage {
-	private final String contentMessage;
+	private String content;
 
-	public ResponseMessage(String contentMessage) {
-		this.contentMessage = contentMessage;
+	public ResponseMessage() {
 	}
 
-	public String getContentMessage() {
-		return contentMessage;
+	public ResponseMessage(String content) {
+		this.content = content;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 }
